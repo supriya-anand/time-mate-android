@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EpochConverter</string>
+    <string name="hint_enter_timestamp">Enter timestamp</string>
+    <string name="button_convert">Convert</string>
+    <string name="result_default">Result</string>
+    <string name="error_invalid_timestamp">Invalid Timestamp</string>
+</resources>
