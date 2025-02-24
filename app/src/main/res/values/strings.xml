@@ -4,4 +4,13 @@
     <string name="button_convert">Convert</string>
     <string name="result_default">Result</string>
     <string name="error_invalid_timestamp">Invalid Timestamp</string>
+
+    <string name="hint_enter_day">Day</string>
+    <string name="hint_enter_month">Month</string>
+    <string name="hint_enter_year">Year</string>
+    <string name="hint_enter_hour">Hour</string>
+    <string name="hint_enter_minute">Minute</string>
+    <string name="hint_enter_seconds">Seconds</string>
+    <string name="button_human_date">Convert</string>
+    <string name="error_invalid_date">Invalid Date</string>
 </resources>
