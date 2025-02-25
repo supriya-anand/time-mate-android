@@ -18,11 +18,26 @@ class MainActivity : AppCompatActivity() {
 
         val timestampInput = findViewById<EditText>(R.id.timestampInput)
         val convertButton = findViewById<Button>(R.id.convertButton)
-        val resultText = findViewById<TextView>(R.id.resultText)
+        val humanDateResult = findViewById<TextView>(R.id.humanDateResult)
+
+        // New input fields for human-readable date
+        val dayInput = findViewById<EditText>(R.id.dayInput)
+        val monthInput = findViewById<EditText>(R.id.monthInput)
+        val yearInput = findViewById<EditText>(R.id.yearInput)
+        val hourInput = findViewById<EditText>(R.id.hourInput)
+        val minuteInput = findViewById<EditText>(R.id.minuteInput)
+        val secondInput = findViewById<EditText>(R.id.secondInput)
+        val convertHumanTimeButton = findViewById<Button>(R.id.convertHumanTimeButton)
+        val unixTimestampResult = findViewById<TextView>(R.id.unixTimestampResult) // Result for human date -> timestamp
+
 
         // Observe LiveData and update UI when the converted time changes
         clockViewModel.convertedTime.observe(this) { convertedTime ->
-            resultText.text = convertedTime
+            humanDateResult.text = convertedTime
+        }
+
+        clockViewModel.unixTime.observe(this) { unixTime ->
+            unixTimestampResult.text = unixTime.toString()
         }
 
         // Convert timestamp when the button is clicked
@@ -31,7 +46,24 @@ class MainActivity : AppCompatActivity() {
             if (timestamp != null) {
                 clockViewModel.convertTime(timestamp)
             } else {
-                resultText.text = getString(R.string.error_invalid_timestamp)
+                humanDateResult.text = getString(R.string.error_invalid_timestamp)
+            }
+        }
+
+        // Convert human-readable date to timestamp
+        convertHumanTimeButton.setOnClickListener {
+            val day = dayInput.text.toString().toIntOrNull()
+            val month = monthInput.text.toString().toIntOrNull()
+            val year = yearInput.text.toString().toIntOrNull()
+            val hour = hourInput.text.toString().toIntOrNull() ?: 0
+            val minute = minuteInput.text.toString().toIntOrNull() ?: 0
+            val second = secondInput.text.toString().toIntOrNull() ?: 0
+
+            if (day != null && month != null && year != null) {
+                val formattedDate = String.format("%04d-%02d-%02d %02d:%02d:%02d", year, month, day, hour, minute, second)
+                clockViewModel.backToUnix(formattedDate)
+            } else {
+                unixTimestampResult.text = getString(R.string.error_invalid_date)
             }
         }
     }
