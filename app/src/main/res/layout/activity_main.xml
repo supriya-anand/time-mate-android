@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -22,67 +23,68 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"/>
 
+    <TextView
+        android:id="@+id/humanDateResult"
+        style="@style/ResultTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Human Date Result"
+        android:textSize="16sp"
+        android:padding="8dp"/>
+
     <!-- Human-readable Date Input -->
     <EditText
         android:id="@+id/dayInput"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/hint_enter_day"
         android:inputType="number" />
 
     <EditText
         android:id="@+id/monthInput"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/hint_enter_month"
         android:inputType="number" />
 
     <EditText
         android:id="@+id/yearInput"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/hint_enter_year"
         android:inputType="number" />
 
     <EditText
         android:id="@+id/hourInput"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/hint_enter_hour"
         android:inputType="number" />
 
     <EditText
         android:id="@+id/minuteInput"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/hint_enter_minute"
         android:inputType="number" />
 
     <EditText
         android:id="@+id/secondInput"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/hint_enter_seconds"
         android:inputType="number" />
 
     <Button
         android:id="@+id/convertHumanTimeButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_human_date" />
 
-
-    <TextView
-        android:id="@+id/humanDateResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Human Date Result"
-        android:textSize="16sp"
-        android:padding="8dp"/>
-
     <TextView
         android:id="@+id/unixTimestampResult"
-        android:layout_width="wrap_content"
+        style="@style/ResultTextStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Unix Timestamp Result"
         android:textSize="16sp"

@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         clockViewModel.unixTime.observe(this) { unixTime ->
-            unixTimestampResult.text = unixTime.toString()
+            unixTimestampResult.text = String.format(unixTime.toString())
         }
 
         // Convert timestamp when the button is clicked
