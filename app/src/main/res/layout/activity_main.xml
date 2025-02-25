@@ -6,86 +6,137 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Timestamp Input -->
-    <EditText
-        android:id="@+id/timestampInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_enter_timestamp"
-        android:inputType="number" />
-
-    <Button
-        android:id="@+id/convertButton"
+    <Switch
+        android:id="@+id/switchTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_convert"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"/>
+        android:text="Dark Mode"/>
 
-    <!-- Human-readable Date Input -->
-    <EditText
-        android:id="@+id/dayInput"
+    <!-- Epoch to Human Date (Side by Side) -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_enter_day"
-        android:inputType="number" />
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/monthInput"
+        <EditText
+            android:id="@+id/timestampInput"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_enter_timestamp"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/convertButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/button_convert" />
+    </LinearLayout>
+
+    <!-- Expandable Space -->
+    <Space
+        android:id="@+id/expandableSpace"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"/>
+
+    <!-- Result for Epoch to Human -->
+    <TextView
+        android:id="@+id/humanDateResult"
+        style="@style/ResultTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_enter_month"
-        android:inputType="number" />
+        android:text="@string/human_date_result"
+        android:textSize="16sp"
+        android:padding="8dp" />
 
-    <EditText
-        android:id="@+id/yearInput"
+    <!-- Human Date to Epoch Section -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_enter_year"
-        android:inputType="number" />
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/hourInput"
+        <EditText
+            android:id="@+id/dayInput"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_enter_day"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/monthInput"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_enter_month"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/yearInput"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_enter_year"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_enter_hour"
-        android:inputType="number" />
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
 
-    <EditText
-        android:id="@+id/minuteInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_enter_minute"
-        android:inputType="number" />
+        <EditText
+            android:id="@+id/hourInput"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_enter_hour"
+            android:inputType="number" />
 
-    <EditText
-        android:id="@+id/secondInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_enter_seconds"
-        android:inputType="number" />
+        <EditText
+            android:id="@+id/minuteInput"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_enter_minute"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/secondInput"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_enter_seconds"
+            android:inputType="number" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/convertHumanTimeButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
         android:text="@string/button_human_date" />
 
+    <!-- Expandable Space -->
+    <Space
+        android:id="@+id/expandableSpace2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"/>
 
-    <TextView
-        android:id="@+id/humanDateResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Human Date Result"
-        android:textSize="16sp"
-        android:padding="8dp"/>
-
+    <!-- Result for Human Date to Epoch -->
     <TextView
         android:id="@+id/unixTimestampResult"
-        android:layout_width="wrap_content"
+        style="@style/ResultTextStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Unix Timestamp Result"
+        android:text="@string/unix_timestamp_result"
         android:textSize="16sp"
-        android:padding="8dp"/>
+        android:padding="8dp" />
+
 
 </LinearLayout>

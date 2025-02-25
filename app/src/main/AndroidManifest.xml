@@ -2,7 +2,7 @@
 
     <application
         android:allowBackup="true"
-        android:theme="@style/Theme.ViewModelApp">
+        android:theme="@style/Theme.MyApp">
 
         <activity
             android:name=".MainActivity"

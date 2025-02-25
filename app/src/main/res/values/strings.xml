@@ -13,4 +13,7 @@
     <string name="hint_enter_seconds">Seconds</string>
     <string name="button_human_date">Convert</string>
     <string name="error_invalid_date">Invalid Date</string>
+
+    <string name="unix_timestamp_result">Unix Timestamp Result</string>
+    <string name="human_date_result">Human Date Result</string>
 </resources>
